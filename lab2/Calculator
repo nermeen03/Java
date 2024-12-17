@@ -1,0 +1,41 @@
+class Calc{
+	public static void main(String[] args){
+			try{
+			int first = Integer.parseInt(args[0]);
+			String op = args[1];
+			int second = Integer.parseInt(args[2]);
+			switch(op){
+				case "+":
+					System.out.println(sum(first,second));
+					break;
+				case "-":
+					System.out.println(subtract(first,second));
+					break;
+				case "x":
+					System.out.println(multiply(first,second));
+					break;
+				case "/":
+					System.out.println(divide(first,second));
+					break;
+					
+			}
+			}
+			
+		catch(Exception e){
+			System.out.println("enter 2 integer values and an operator in between");
+		}
+	}
+	
+	static int multiply(int a, int b){
+		return a*b;
+	}
+	static int sum(int a, int b){
+		return a+b;
+	}
+	static int subtract(int a, int b){
+		return a-b;
+	}
+	static int divide(int a, int b){
+		return a/b;
+	}
+}
