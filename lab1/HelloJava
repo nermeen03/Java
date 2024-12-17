@@ -1,0 +1,13 @@
+class HelloJava{
+	public static void main(String[] args){
+		System.out.println("Hello Java");
+	}
+}
+class Hello{
+	public static void main(String[] args){
+		System.out.println("Hello Java 2 "+args[0]);
+	}
+}
+
+class Test{
+}
