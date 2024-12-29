@@ -1,0 +1,7 @@
+#text {
+    -fx-fill: blue;
+    -fx-font-size: 40px;
+}
+#rect{
+    -fx-fill: linear-gradient(to bottom, black, white, black);
+}
