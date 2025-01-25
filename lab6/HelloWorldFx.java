@@ -6,6 +6,8 @@
 package helloworldfx;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.paint.LinearGradient;
@@ -22,15 +24,18 @@ import javafx.scene.text.FontWeight;
  *
  * @author nerme
  */
-public class HelloWorldFx extends Application {
+public class HelloWorldFX extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-        Rectangle r = new Rectangle(0, 0, 400, 400);
-        r.setId("rect");
+        Stop[] stops = new Stop[] {new Stop(0, Color.BLACK),new Stop(0.5, Color.WHITE),new Stop(1, Color.BLACK) };
+        Rectangle r = new Rectangle(0,0,400,400);
+        LinearGradient lg = new LinearGradient(255, 0, 255, 400, false, CycleMethod.NO_CYCLE, stops);
+        r.setFill(lg);
         
         Text t = new Text(10, 50, "Hello World");
-        t.setId("text");
+        t.setFill(Color.RED);
+        t.setFont(Font.font(null, FontWeight.BOLD, 40));
         
         Reflection reflection = new Reflection();
         reflection.setFraction(0.7);
@@ -43,9 +48,6 @@ public class HelloWorldFx extends Application {
         root.getChildren().add(r);
         root.getChildren().add(t);
         Scene scene = new Scene(root, 300, 250);
-        scene.getStylesheets().add(getClass().getResource("/helloworldfx/Style.css").toExternalForm());
-
-
         
         primaryStage.setTitle("Text reflection");
         primaryStage.setScene(scene);
